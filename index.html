@@ -26,7 +26,7 @@
       <div class="nav-links">
         <a href="#case-studies">Case Studies</a>
         <a href="#faq">FAQ</a>
-        <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="btn-primary nav-cta">Free Audit</a>
+        <button class="btn-primary nav-cta open-modal">Free Audit</button>
       </div>
       <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -35,7 +35,7 @@
     <div class="nav-mobile-menu" id="mobileMenu">
       <a href="#case-studies">Case Studies</a>
       <a href="#faq">FAQ</a>
-      <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="btn-primary">Free Audit</a>
+      <button class="btn-primary open-modal">Free Audit</button>
     </div>
   </nav>
 
@@ -52,7 +52,7 @@
         No fluff. No excuses. Just results.
       </p>
       <div class="hero-ctas reveal reveal-delay-3">
-        <a href="#solution" class="btn-primary pulse">Show Me How</a>
+        <button class="btn-primary pulse open-modal">Show Me How</button>
         <a href="#case-studies" class="btn-secondary">See The Proof</a>
       </div>
       <div class="hero-scroll-hint reveal reveal-delay-4">
@@ -87,7 +87,7 @@
         <p>At Adkivo, we optimize for one metric: <strong>cost per customer</strong>. Not cost per lead. Not cost per click. Cost per actual, revenue-generating customer.</p>
         <p class="manifesto-final">Everything else is noise.</p>
       </div>
-      <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="btn-primary reveal reveal-delay-3">I Want This Honesty →</a>
+      <button class="btn-primary reveal reveal-delay-3 open-modal">I Want This Honesty →</button>
     </div>
   </section>
 
@@ -151,7 +151,7 @@
             </div>
           </div>
         </div>
-        <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="btn-primary reveal reveal-delay-4">I Want This →</a>
+        <button class="btn-primary reveal reveal-delay-4 open-modal">I Want This →</button>
       </div>
       <div class="solution-right reveal reveal-delay-2">
         <div class="solution-visual">
@@ -335,7 +335,7 @@
 
         <p class="ap-close">Let's talk.</p>
       </div>
-      <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="btn-primary reveal reveal-delay-3">See If We're a Fit →</a>
+      <button class="btn-primary reveal reveal-delay-3 open-modal">See If We're a Fit →</button>
     </div>
   </section>
 
@@ -403,7 +403,7 @@
       <div class="container-narrow">
         <h2 class="final-headline reveal">Ready to Stop Wasting Money?</h2>
         <p class="final-sub reveal reveal-delay-1">Book a free strategy call. We'll show you what's broken. No pitch. No BS.</p>
-        <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="btn-dark reveal reveal-delay-2">Book Your Free Audit</a>
+        <button class="btn-dark reveal reveal-delay-2 open-modal">Book Your Free Audit</button>
         <p class="final-wa reveal reveal-delay-3">Or message us on WhatsApp: <a href="https://wa.me/212754197546" target="_blank">+212 754 197 546</a></p>
       </div>
     </div>
@@ -440,6 +440,99 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===================== AUDIT MODAL ===================== -->
+  <div class="modal-overlay" id="auditModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+      <!-- FORM STEP -->
+      <div class="modal-step" id="modalForm">
+        <p class="modal-label">Free Audit — Pre-Qualification</p>
+        <h3 id="modalTitle">Let's See If We're a Fit</h3>
+        <p class="modal-desc">2 minutes. Honest answers only. We'll do the rest.</p>
+
+        <form id="auditForm" novalidate>
+          <div class="form-group">
+            <label for="f-name">Your Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Youssef Moussaoui" required autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-phone">Phone / WhatsApp</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="+212 6XX XXX XXX" required autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-niche">Your Niche / Product</label>
+            <input type="text" id="f-niche" name="niche" placeholder="e.g. Supplements, Fashion, Electronics…" required />
+          </div>
+
+          <div class="form-group">
+            <label>Are you currently running ads?</label>
+            <div class="radio-row">
+              <label class="radio-opt">
+                <input type="radio" name="running_ads" value="yes" required />
+                <span>Yes</span>
+              </label>
+              <label class="radio-opt">
+                <input type="radio" name="running_ads" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Monthly ad budget you're willing to invest</label>
+            <div class="budget-options">
+              <label class="budget-opt">
+                <input type="radio" name="budget" value="under_3k" required />
+                <span>Under 3,000 DH</span>
+              </label>
+              <label class="budget-opt">
+                <input type="radio" name="budget" value="3k_10k" />
+                <span>3,000 – 10,000 DH</span>
+              </label>
+              <label class="budget-opt">
+                <input type="radio" name="budget" value="10k_30k" />
+                <span>10,000 – 30,000 DH</span>
+              </label>
+              <label class="budget-opt">
+                <input type="radio" name="budget" value="over_30k" />
+                <span>More than 30,000 DH</span>
+              </label>
+            </div>
+          </div>
+
+          <p class="form-error" id="formError"></p>
+          <button type="submit" class="btn-primary form-submit">Submit — Get My Free Audit →</button>
+        </form>
+      </div>
+
+      <!-- THANK YOU STEP -->
+      <div class="modal-step hidden" id="modalThanks">
+        <div class="thanks-icon">✓</div>
+        <h3>Application Received.</h3>
+        <p class="thanks-msg">
+          Thank you for applying to Adkivo. We received your message and we will contact you soon.<br /><br />
+          <strong>Keep your phone on.</strong>
+        </p>
+        <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20just%20submitted%20my%20audit%20request" target="_blank" class="btn-wa-modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message Us on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== STICKY BUTTONS ===================== -->
+  <div class="sticky-bar" id="stickyBar">
+    <a href="https://wa.me/212754197546?text=Hi%20Adkivo,%20I%20want%20to%20stop%20wasting%20money%20on%20bad%20leads" target="_blank" class="sticky-wa" aria-label="WhatsApp Adkivo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <button class="sticky-cta open-modal">Book Free Audit →</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

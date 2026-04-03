@@ -248,3 +248,83 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.setProperty('--glow-color', color);
   });
 });
+
+/* ---- AUDIT MODAL ---- */
+const auditModal  = document.getElementById('auditModal');
+const modalClose  = document.getElementById('modalClose');
+const auditForm   = document.getElementById('auditForm');
+const modalForm   = document.getElementById('modalForm');
+const modalThanks = document.getElementById('modalThanks');
+const formError   = document.getElementById('formError');
+
+function openModal() {
+  auditModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Reset to form step each time
+  modalForm.classList.remove('hidden');
+  modalThanks.classList.add('hidden');
+  auditForm.reset();
+  formError.textContent = '';
+}
+
+function closeModal() {
+  auditModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// All buttons with .open-modal trigger the popup
+document.querySelectorAll('.open-modal').forEach(btn => {
+  btn.addEventListener('click', openModal);
+});
+
+// Close on X button
+modalClose.addEventListener('click', closeModal);
+
+// Close on overlay click (outside the box)
+auditModal.addEventListener('click', e => {
+  if (e.target === auditModal) closeModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && auditModal.classList.contains('open')) closeModal();
+});
+
+// Form submission
+auditForm.addEventListener('submit', e => {
+  e.preventDefault();
+  formError.textContent = '';
+
+  const name   = auditForm.querySelector('#f-name').value.trim();
+  const phone  = auditForm.querySelector('#f-phone').value.trim();
+  const niche  = auditForm.querySelector('#f-niche').value.trim();
+  const ads    = auditForm.querySelector('input[name="running_ads"]:checked');
+  const budget = auditForm.querySelector('input[name="budget"]:checked');
+
+  if (!name)   { formError.textContent = 'Please enter your name.'; return; }
+  if (!phone)  { formError.textContent = 'Please enter your phone number.'; return; }
+  if (!niche)  { formError.textContent = 'Please tell us your niche or product.'; return; }
+  if (!ads)    { formError.textContent = 'Please tell us if you\'re running ads.'; return; }
+  if (!budget) { formError.textContent = 'Please select your monthly budget range.'; return; }
+
+  // Show thank you
+  modalForm.classList.add('hidden');
+  modalThanks.classList.remove('hidden');
+});
+
+/* ---- STICKY BAR (show after hero) ---- */
+const stickyBar = document.getElementById('stickyBar');
+const heroSection = document.getElementById('hero');
+
+function checkStickyVisibility() {
+  if (!heroSection) return;
+  const heroBottom = heroSection.getBoundingClientRect().bottom;
+  if (heroBottom < 0) {
+    stickyBar.classList.add('visible');
+  } else {
+    stickyBar.classList.remove('visible');
+  }
+}
+
+window.addEventListener('scroll', checkStickyVisibility, { passive: true });
+checkStickyVisibility();
