@@ -1015,6 +1015,43 @@ section {
   margin-top: 16px;
 }
 
+/* --- Screenshot Proof --- */
+.cs-screenshot {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cs-screenshot-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin: 0;
+}
+
+.cs-screenshot a {
+  display: block;
+  overflow: hidden;
+}
+
+.cs-screenshot-img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.9) saturate(0.9);
+}
+
+.cs-screenshot a:hover .cs-screenshot-img {
+  transform: scale(1.02);
+  filter: brightness(1) saturate(1);
+}
+
 /* --- Featured Card (Client 5) --- */
 .case-card-featured {
   margin-top: 24px;
