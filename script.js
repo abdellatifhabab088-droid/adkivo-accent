@@ -307,6 +307,15 @@ auditForm.addEventListener('submit', e => {
   if (!ads)    { formError.textContent = 'Please tell us if you\'re running ads.'; return; }
   if (!budget) { formError.textContent = 'Please select your monthly budget range.'; return; }
 
+  // Submit to Netlify Forms via fetch
+  const formData = new FormData(auditForm);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString()
+  })
+  .catch(err => console.error('Netlify form submission error:', err));
+
   // Show thank you
   modalForm.classList.add('hidden');
   modalThanks.classList.remove('hidden');
