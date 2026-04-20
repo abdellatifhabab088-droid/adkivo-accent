@@ -698,7 +698,8 @@
         <h3 id="modalTitle">Let's See If We're a Fit</h3>
         <p class="modal-desc">2 minutes. Honest answers only. We'll do the rest.</p>
 
-        <form id="auditForm" novalidate>
+        <form id="auditForm" name="audit" netlify novalidate>
+          <input type="hidden" name="form-name" value="audit" />
           <div class="form-group">
             <label for="f-name">Your Name</label>
             <input type="text" id="f-name" name="name" placeholder="Youssef Moussaoui" required autocomplete="name" />
